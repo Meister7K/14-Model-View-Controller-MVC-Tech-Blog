@@ -1,0 +1,35 @@
+[
+  {
+    "blog_title": "How to Code",
+    "blog_body": "This is how you code.",
+    "author": "some guy",
+    "publish_time": 10,
+    "comments": {
+      "comment_body": "wow", 
+      "comment_author": "another guy",
+      "comment_time": 11
+    }
+  },
+  {
+    "blog_title": "How to Code",
+    "blog_body": "This is how you code.",
+    "author": "some guy",
+    "publish_time": 10,
+    "comments": {
+      "comment_body": "wow", 
+      "comment_author": "another guy",
+      "comment_time": 11
+    }
+  },
+  {
+    "blog_title": "How to Code",
+    "blog_body": "This is how you code.",
+    "author": "some guy",
+    "publish_time": 10,
+    "comments": {
+      "comment_body": "wow", 
+      "comment_author": "another guy",
+      "comment_time": 11
+    }
+  }
+]

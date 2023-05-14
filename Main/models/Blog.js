@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 
 class Blog extends Model {};
 
-Member.init(
+Blog.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,21 +13,21 @@ Member.init(
             autoIncrement: true,
         },
         title: {
-            type: dataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1,300],
             },
         },
         body: {
-            type: dataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1],
             },
         },
         date_created: {
-            type: dataTypes.DATE,
+            type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },

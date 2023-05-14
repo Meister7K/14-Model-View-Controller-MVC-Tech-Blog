@@ -10,7 +10,32 @@
 </head>
 
 <body>
- 
+  <div class="">
+    <header class="">
+      <h1>
+        <span role="img"><img src="../../Public/img/dragon-ball-x-one-piece-logo.png"></span><a href="/">Anime Blog</a>
+      </h1>
+      <nav>
+      {{#if logged_in}}
+      <a href="/profile">profile</a> | 
+      <button class="" id="log-btn">logout</button>
+      {{else}}
+      <a href="/login">login</a>
+      {{/if}}
+      </nav>
+    </header>
+    <main class="">
+      {{{ body}}}
+
+    </main>
+    <footer>
+
+    </footer>
+  </div>
+
+{{#if logged_in}}
+<script src="/Main/public/js/logout.js"></script>
+{{/if}}
 </body>
 
 </html>

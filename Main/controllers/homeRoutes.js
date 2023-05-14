@@ -8,7 +8,7 @@ router.get('/', async (req, res) =>{
             include: [
                 {
                     model: Member,
-                    attributes: ['username']
+                    attributes: ['username'],
                 },
             ],
         });
@@ -28,7 +28,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
             include: [
                 {
                     model: Member,
-                    attributes: ['username']
+                    attributes: ['username'],
                 },{
                     model: Comment,
                     include: [{ model: Member, attributes: ['username']}],
@@ -77,3 +77,4 @@ router.get('/newBlog', (req, res) =>{
     res.redirect('/login');
 });
 
+module.exports = router;

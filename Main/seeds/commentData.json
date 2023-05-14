@@ -1,14 +1,13 @@
 [
     {
-    "blog_id": 1,
-    "comment_body": "wow", 
-    "user_id": "another guy",
-    "comment_time": 11
+    "comment_body": "oh woww", 
+    "member_id": 1,
+    "blog_id": 2
     },
     {
-    "blog_id": 2,
-    "comment_body": "wow", 
-    "user_id": "another guy",
-    "comment_time": 11 
+    "comment_body": "woww", 
+    "date_created": 11,
+    "member_id": 2,
+    "blog_id": 1
     }
 ]

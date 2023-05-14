@@ -1,3 +1,45 @@
+<div>
+    <h2>Hello {{username}} </h2>
+</div>
 
+<div>
+    {{!-- blog history --}}
+    <div>
+        {{#if blog.length}}
+        <div>
+            <h3>Your Blogs:</h3>
+            {{#each blogs as |blog|}}
+            <div class="">
+                <div>
+                    <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+                </div>
+                <div>
+                    <button class="edit-btn" data-id="{{blog.id}}">Edit</button>
+                    {{!-- may need new hb page for edit  --}}
+                    <button class="delete-btn" data-id="{{blog.id}}">Delete</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+    </div>
+    {{!-- new blog --}}
+    <div> 
+        <h3 class="">Create new blog:</h3>
+        <form class="">
+            <div class="">
+                <label for="blogTitle">Blog Title:</label>
+                <input class="" type="text" id="" name="blogTitle">
+            </div>
+            <div class="">
+                <label for="blogBody">Blog Body:</label>
+                <textarea class="" type="text" id="" name="blogBody" rows="4"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="">create</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 

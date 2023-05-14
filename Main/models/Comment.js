@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 
 class Comment extends Model {};
 
-Member.init(
+Comment.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,14 +13,14 @@ Member.init(
             autoIncrement: true,
         },
         comment_body: {
-            type: dataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate:{
                 len: [1,500],
             },
         },
         date_created: {
-            type: dataTypes.DATE,
+            type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },

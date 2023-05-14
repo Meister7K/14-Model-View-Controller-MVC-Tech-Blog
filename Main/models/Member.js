@@ -17,14 +17,14 @@ Member.init(
             autoIncrement: true,
         },
         username: {
-            type: dataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate:{
                 len: [1, 50],
             },
         },
         email: {
-            type: dataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             validate:{
@@ -32,7 +32,7 @@ Member.init(
             },
         },
         password: {
-            type: dataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate:{
                 len: [8],

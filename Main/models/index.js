@@ -7,7 +7,7 @@ Member.hasMany(Blog, {
     foreignKey: 'member_id',
 });
 
-Member.HasMany(Comment, {
+Member.hasMany(Comment, {
     foreignKey: 'member_id',
 });
 

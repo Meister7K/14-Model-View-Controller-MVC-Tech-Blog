@@ -1,23 +1,21 @@
 [
   {
-    "blog_title": "How to Code",
-    "blog_body": "This is how you code.",
-    "user_id": "some guy",
-    "publish_time": 10,
-    "comment_id": 1
+    "title": "How to Code",
+    "body": "This is how you code.",
+    "member_id": 1,
+    "date_created": 11
   },
   {
-    "blog_title": "How to Code",
-    "blog_body": "This is how you code.",
-    "author": "some guy",
-    "publish_time": 10,
-    "comment_id": 2
+    "title": "How to Code",
+    "body": "This is how you code.",
+    "member_id": "some guy"
+    
  
   },
   {
-    "blog_title": "How to Code",
-    "blog_body": "This is how you code.",
-    "author": "some guy",
-    "publish_time": 10
+    "title": "How to anime",
+    "body": "This is how you anime.",
+    "member_id": 2,
+    "date_created": 10
   }
 ]

@@ -5,7 +5,6 @@ const Comment = require('./Comment');
 
 Member.hasMany(Blog, {
     foreignKey: 'member_id',
-    ondDelete: 'CASCADE'
 });
 
 Member.HasMany(Comment, {
@@ -26,6 +25,7 @@ Comment.belongsTo(Blog, {
 
 Blog.hasMany(Comment, {
     foreignKey: 'blog_id',
+    ondDelete: 'CASCADE'
 })
 
 

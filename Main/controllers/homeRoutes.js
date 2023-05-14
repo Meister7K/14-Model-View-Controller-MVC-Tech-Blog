@@ -69,13 +69,6 @@ router.get('/login', (req,res) =>{
     res.render('login');
 });
 
-router.get('/signup', (req,res) =>{
-    if(req.session.logged_in){
-        res.redirect('/profile');
-    }
-    res.render('signup');
-});
-
 router.get('/newBlog', (req, res) =>{
     if(req.session.logged_in){
         res.render('newBlog');
@@ -84,4 +77,3 @@ router.get('/newBlog', (req, res) =>{
     res.redirect('/login');
 });
 
-router.get

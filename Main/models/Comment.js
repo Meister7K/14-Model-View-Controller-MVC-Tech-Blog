@@ -2,7 +2,7 @@ const { Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
 
-class Blog extends Model {};
+class Comment extends Model {};
 
 Member.init(
     {
@@ -12,18 +12,11 @@ Member.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
+        comment_body: {
             type: dataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [1,300],
-            },
-        },
-        body: {
-            type: dataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1],
+            validate:{
+                len: [1,500],
             },
         },
         date_created: {
@@ -39,14 +32,22 @@ Member.init(
                 key: 'id',
             }
         },
+        blog_id:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            reference: {
+                model: 'blog',
+                key: 'id',
+            }
+        },
     },
     {
         sequelize,
         timestamp: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'blog',
+        modelName: 'comment',
     }
 );
 
-module.exports = Blog;
+module.exports = Comment;

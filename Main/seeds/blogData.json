@@ -2,34 +2,22 @@
   {
     "blog_title": "How to Code",
     "blog_body": "This is how you code.",
-    "author": "some guy",
+    "user_id": "some guy",
     "publish_time": 10,
-    "comments": {
-      "comment_body": "wow", 
-      "comment_author": "another guy",
-      "comment_time": 11
-    }
+    "comment_id": 1
   },
   {
     "blog_title": "How to Code",
     "blog_body": "This is how you code.",
     "author": "some guy",
     "publish_time": 10,
-    "comments": {
-      "comment_body": "wow", 
-      "comment_author": "another guy",
-      "comment_time": 11
-    }
+    "comment_id": 2
+ 
   },
   {
     "blog_title": "How to Code",
     "blog_body": "This is how you code.",
     "author": "some guy",
-    "publish_time": 10,
-    "comments": {
-      "comment_body": "wow", 
-      "comment_author": "another guy",
-      "comment_time": 11
-    }
+    "publish_time": 10
   }
 ]

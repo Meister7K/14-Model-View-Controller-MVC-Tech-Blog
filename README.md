@@ -43,3 +43,5 @@ reach out below @
 
 ## Cited
 -Used mini project main to make file structure and template for code framework.
+
+- normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css 

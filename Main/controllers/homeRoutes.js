@@ -12,10 +12,10 @@ router.get('/', async (req, res) =>{
                 },
             ],
         });
-    const blogs = blogData.map((blog) => blog.get({plain: true}));
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
     res.render('homepage', {
         blogs,
-        logged_in: req.session.logged_in
+        //logged_in: req.session.logged_in
     });
     } catch(err){
         res.status(500).json(err);
@@ -65,7 +65,9 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req,res) =>{
     if(req.session.logged_in){
         res.redirect('/profile');
+        return;
     }
+    
     res.render('login');
 });
 
@@ -74,7 +76,7 @@ router.get('/newBlog', (req, res) =>{
         res.render('newBlog');
         return;
     }
-    res.redirect('/login');
+    res.redirect('login');
 });
 
 module.exports = router;

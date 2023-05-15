@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+//const path = require('path');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
@@ -13,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 const sesh = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 300000,
+    maxAge: 24*60*60*1000,
     httpOnly: true,
     secure: false, 
     sameSite: 'strict',
@@ -30,6 +31,7 @@ app.use(session(sesh));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+//app.use(express.static(path.join(__dirname, 'public')));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

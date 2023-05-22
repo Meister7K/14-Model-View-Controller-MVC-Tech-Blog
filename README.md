@@ -12,7 +12,7 @@
 - [Cited](#Cited)
 
 ## Description
-- This project was created to develop a back-end database for an e-commerce website that implemented Express, Sequelize, databases, and the CRUD methodology. the goal of this project was to create a backend that reads and responds to GET, POST, PUT and DELETE requests made by the client side of the app. 
+- This project was created to test the methods of the MVC model by creating a functional blog based website. The site allows you to sign up or login and once completed, post or comment on blogs previously created.
 
 ## Installation
 This project requires the installation of: 
@@ -24,7 +24,8 @@ This project requires the installation of:
 ## Usage
 
 Example GIF
-![Example GIF](/assets/ecommerce.gif)
+<!-- ! -->
+![Example GIF](/assets/.gif)
 
 ## License
 - MIT

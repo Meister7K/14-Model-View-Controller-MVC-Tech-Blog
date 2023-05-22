@@ -14,10 +14,12 @@
                     <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
                 </div>
                 <div>
-                    <button class="update-btn" data-id="{{blog.id}}">Update</button>
-
-                    <button class="delete-btn" data-id="{{blog.id}}">Delete</button>
-                    
+                    <div class="update">
+                        <button id="update-btn" data-id="{{blog.id}}">Update</button>    
+                    </div>
+                    <div class="delete">
+                        <button class="delete-btn" data-id="{{blog.id}}">Delete</button>
+                    </div>
                 </div>
             </div>
             {{/each}}
@@ -32,14 +34,19 @@
             {{#each comments as |comment|}}
             <div class="comment-list">
                 <div>
-                    <h4>{{blog.title}}</h4>
-                    <h5><a href="/blog/{{comment.id}}">{{comment.comment_body}}</a></h5>
+                    <h4><em>{{blog.title}}</em></h4>
+                    <h5><a href="/blog/{{comment.blog_id}}">{{comment.comment_body}}</a></h5>
+                    <h6>{{format_date date_created}}</h6>
+                </div>
+                <div class="delete">
+                    <div>
+                        <button class="delete-btn" data-id="{{comment.id}}">Delete</button>
+                    </div>
                 </div>
                 <div>
-                    <button class="delete-btn" data-id="{{comment.id}}">Delete</button>
-                </div>
-                <div>
-                    <button class="update-btn" data-id="{{comment.id}}">Update</button>
+                    <div class="update">
+                        <button id="update-btn" data-id="{{comment.id}}">Update</button>
+                    </div>
                 </div>
             </div>
             {{/each}}

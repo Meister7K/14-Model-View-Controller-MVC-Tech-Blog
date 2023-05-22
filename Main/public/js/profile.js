@@ -23,7 +23,7 @@ const newBlogHandler = async (event) =>{
 };
 
 const deleteBlogBtnHandler = async (event) =>{
-    if(event.target.hasAttribute('data-id')){
+    if(event.target.hasAttribute('data-id') && event.target.hasAttribute('class')){
         const id = event.target.getAttribute('data-id');
         console.log(id);
 
@@ -40,7 +40,7 @@ const deleteBlogBtnHandler = async (event) =>{
 };
 
 const deleteCommentBtnHandler = async (event) =>{
-    if(event.target.hasAttribute('data-id')){
+    if(event.target.hasAttribute('data-id') && event.target.hasAttribute('class')){
         const id = event.target.getAttribute('data-id');
         console.log(id);
 
@@ -56,23 +56,41 @@ const deleteCommentBtnHandler = async (event) =>{
     }
 };
 
-// const updateBtnHandler = async (event) =>{
-//     if(event.target.hasAttribute('data-id')){
-//         const id = event.target.getAttribute('data-id');
+const updateBlogBtnHandler = async (event) =>{
+    if(event.target.hasAttribute('data-id') && event.target.hasAttribute('id')){
+        const id = event.target.getAttribute('data-id');
 
-//         const response = await fetch(`/api/blog/${id}`, {
-//             method: 'UPDATE',
-//         });
+        const response = await fetch(`/api/blog/${id}`, {
+            method: 'UPDATE',
+        });
 
-//         if(response.ok){
-//             document.location.replace('/update');
-//         }else{
-//             alert('failed to update blog post');
-//         }
-//     }
-// };
+        if(response.ok){
+            document.location.replace('/update');
+        }else{
+            alert('failed to update blog post');
+        }
+    }
+};
 
-// document.querySelector('.blog-form').addEventListener('submit', updateBtnHandler);
+const updateCommentBtnHandler = async (event) =>{
+    if(event.target.hasAttribute('data-id') && event.target.hasAttribute('id')){
+        const id = event.target.getAttribute('data-id');
+
+        const response = await fetch(`/api/comment/${id}`, {
+            method: 'UPDATE',
+        });
+
+        if(response.ok){
+            document.location.replace('/update');
+        }else{
+            alert('failed to update blog post');
+        }
+    }
+};
+
+document.querySelector('.blog-form').addEventListener('submit', updateCommentBtnHandler);
+
+document.querySelector('.blog-form').addEventListener('submit', updateBlogBtnHandler);
 
 document.querySelector('.blog-form').addEventListener('submit', newBlogHandler);
 

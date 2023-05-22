@@ -51,7 +51,10 @@ router.get('/profile', withAuth, async (req, res) => {
             attributes: {
                 exclude:['password']
             },
-            include: [{model:Blog}],
+            include: [{model:Blog},
+            {model: Comment, 
+            include:[{model:Blog, attributes: ['title']}],
+        }],
         });
 
         const member = memberData.get({plain:true});

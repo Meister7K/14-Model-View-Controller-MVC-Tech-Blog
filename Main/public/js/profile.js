@@ -22,12 +22,29 @@ const newBlogHandler = async (event) =>{
     }
 };
 
-const deleteBtnHandler = async (event) =>{
+const deleteBlogBtnHandler = async (event) =>{
     if(event.target.hasAttribute('data-id')){
         const id = event.target.getAttribute('data-id');
         console.log(id);
 
         const response = await fetch(`/api/blog/${id}`, {
+            method: 'DELETE',
+        });
+
+        if(response.ok){
+            document.location.replace('/profile');
+        }else{
+            alert('failed to delete blog post');
+        }
+    }
+};
+
+const deleteCommentBtnHandler = async (event) =>{
+    if(event.target.hasAttribute('data-id')){
+        const id = event.target.getAttribute('data-id');
+        console.log(id);
+
+        const response = await fetch(`/api/comment/${id}`, {
             method: 'DELETE',
         });
 
@@ -59,4 +76,5 @@ const deleteBtnHandler = async (event) =>{
 
 document.querySelector('.blog-form').addEventListener('submit', newBlogHandler);
 
-document.querySelector('.blog-list').addEventListener('click', deleteBtnHandler);
+document.querySelector('.blog-list').addEventListener('click', deleteBlogBtnHandler);
+document.querySelector('.comment-list').addEventListener('click', deleteCommentBtnHandler);

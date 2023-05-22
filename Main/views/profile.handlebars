@@ -26,13 +26,14 @@
     </div>
     {{!-- comment History --}}
      <div>
-        {{#if member_id.comments.length}}
+        {{#if comments.length}}
         <div class="comment-list">
-            <h3>Your Blogs:</h3>
+            <h3>Your Comments:</h3>
             {{#each comments as |comment|}}
-            <div class="">
+            <div class="comment-list">
                 <div>
-                    <h4><a href="/blog/{{comment.id}}">{{comment.comment_body}}</a></h4>
+                    <h4>{{blog.title}}</h4>
+                    <h5><a href="/blog/{{comment.id}}">{{comment.comment_body}}</a></h5>
                 </div>
                 <div>
                     <button class="delete-btn" data-id="{{comment.id}}">Delete</button>

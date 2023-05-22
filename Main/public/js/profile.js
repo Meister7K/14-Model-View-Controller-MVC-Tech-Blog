@@ -6,7 +6,7 @@ const newBlogHandler = async (event) =>{
     const body = document.querySelector('#blog-body').value.trim();
 
     if (title&&body){
-        const response = await fetch('api/blog', {
+        const response = await fetch('/api/blog', {
             method: 'POST',
             body: JSON.stringify({title, body}),
             headers: {

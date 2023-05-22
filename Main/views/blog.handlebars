@@ -3,26 +3,26 @@
         <h2>{{title}}</h2>
         <h4> {{body}} </h4>
         <p> 
-            By: {{member.username}} on {{format_date blog.date_created}}
+            By: {{member.username}} on {{format_date date_created}}
         </p>
     </div>
     <br>
     <div>
         <h3>Comments:</h3>
-        {{#each comment}}
+        {{#each comments as |comment|}}
         <div class="">
             <h5>
-                {{comment_body}}
+                {{comment.comment_body}}
             </h5>
             <p>
-                By: {{member.username}} on {{format_date blog.date_created}}
+                By: {{member.username}} on {{format_date date_created}}
             </p>
         </div>
         <br>
         {{/each}}
         {{#if logged_in}}
         <div>
-            <form class="">
+            <form class="new-comment">
                 <label for="newComment">Add a comment:</label>
                 <textarea class="" id="newComment" name="newComment"></textarea>
                 <button type="submit" class="">Add</button>
@@ -31,3 +31,5 @@
         {{/if}}
     </div>
 </div>
+
+<script src="/js/blog.js"></script>

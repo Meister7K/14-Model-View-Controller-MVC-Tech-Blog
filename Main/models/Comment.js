@@ -24,6 +24,10 @@ Comment.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
+        // comment_author:{//!
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
         member_id:{
             type: DataTypes.INTEGER,
             allowNull: false,

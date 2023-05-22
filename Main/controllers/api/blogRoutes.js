@@ -28,7 +28,7 @@ router.post('/', withAuth, async (req,res)=>{
 router.put('/:id', withAuth, async (req,res)=>{
     try{
         const updateBlog = await Blog.update(req.body, {
-            where: { id: req.params.id},
+            where: { id: req.params.id },
         });
 
         if(!updateBlog){
@@ -45,7 +45,7 @@ router.delete('/:id', withAuth, async (req,res)=>{
         const blogData = await Blog.destroy({
             where: {
                 id: req.params.id,
-                member_id: req.params.member_id
+                member_id: req.session.member_id
             }
         })
         if(!blogData){

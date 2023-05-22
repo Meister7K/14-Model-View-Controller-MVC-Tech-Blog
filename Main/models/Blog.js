@@ -26,6 +26,10 @@ Blog.init(
                 len: [1],
             },
         },
+        // author: {//!
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,

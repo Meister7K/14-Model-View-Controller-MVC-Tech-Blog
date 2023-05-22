@@ -18,7 +18,8 @@
       <nav>
       {{#if logged_in}}
       <a href="/profile">profile</a> | 
-      <button class="" id="log-btn">logout</button>
+      <a href="/">home</a> | 
+      <a href="/" id="logoutBtn">logout</a>
       {{else}}
       <a href="/login">login</a>
       {{/if}}
@@ -35,7 +36,10 @@
 
 {{#if logged_in}}
 <script src="/js/logout.js"></script>
+{{else}}
+<script src="/js/login.js"></script>
 {{/if}}
+
 </body>
 
 </html>

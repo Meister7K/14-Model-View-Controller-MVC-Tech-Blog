@@ -47,16 +47,20 @@ router.get('/blog/:id', withAuth, async (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
     try{
-        const blogData = await Blog.findAll({
-            where: {member_id: req.session.member_id},
-            include: [{model: Member, attributes: ['username']},]
+        const memberData = await Member.findByPk(req.session.member_id,{
+            attributes: {
+                exclude:['password']
+            },
+            include: [{model:Blog}],
         });
-        const blogs = blogData.map((blog)=> blog.get({plain: true}));
+
+        const member = memberData.get({plain:true});
 
         res.render('profile', {
-            blogs, 
-            logged_in: req.session.logged_in,
-        })
+            ...member,
+            logged_in: true
+        });
+
     } catch (err) {
         res.status(500).json(err)
     }
@@ -78,5 +82,7 @@ router.get('/newBlog', (req, res) =>{
     }
     res.redirect('login');
 });
+
+
 
 module.exports = router;
